@@ -8,7 +8,15 @@ result=model.transcribe(audio="audios/bbb.mp3",
                         task="translate",
                         word_timestamps=False)
 
-print(result)
+# print(result["segments"])
 
-# with open ("output.json","w ") as f:
-#     json.dump(f,result)
+chunks=[]
+for segment in result["segments"]:
+    chunks.append({"start":segment["start"],
+                    "end":segment["end"],
+                    "text":segment["text"]
+                    })
+
+print(chunks)
+with open("output.json","w") as f :
+    json.dump(chunks,f)                   
