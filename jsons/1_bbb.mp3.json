@@ -1,0 +1,26 @@
+{
+    "chunks": [
+        {
+            "number": "number",
+            "title": "title",
+            "start": 0.0,
+            "end": 2.0,
+            "text": " Today we will see who has the guts"
+        },
+        {
+            "number": "number",
+            "title": "title",
+            "start": 2.0,
+            "end": 7.0,
+            "text": " Because in this video, I will be giving you all the concepts that we have learnt in the Sigma Map Development course"
+        },
+        {
+            "number": "number",
+            "title": "title",
+            "start": 7.0,
+            "end": 10.0,
+            "text": " based on which I will be giving you an exercise which you all have to solve"
+        }
+    ],
+    "text": " Today we will see who has the guts Because in this video, I will be giving you all the concepts that we have learnt in the Sigma Map Development course based on which I will be giving you an exercise which you all have to solve"
+}
