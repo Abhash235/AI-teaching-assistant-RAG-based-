@@ -13,20 +13,20 @@ for audio in audios:
         title=audio.split("_")[1][:-4]
         print(number, title)
 
-        result=model.transcribe(audio=f"audios/{audio}",
-        # result=model.transcribe(audio=f"audios/1_bbb.mp3",
+        # result=model.transcribe(audio=f"audios/{audio}",
+        result=model.transcribe(audio=f"audios/1_bbb.mp3",
                             language="hi",
                             task="translate",
                             word_timestamps=False)
     chunks=[]
     for segment in result["segments"]:
-        chunks.append({"number":"number",
-                        "title":"title",
+        chunks.append({"number":number,
+                        "title":title,
                         "start":segment["start"],
                         "end":segment["end"],
                         "text":segment["text"]
                         })
     chunks_with_metadata={"chunks":chunks,"text":result["text"]}
-    print(chunks)
+    # print(chunks)
     with open(f"jsons/{audio}.json","w") as f :
         json.dump(chunks_with_metadata,f)                   
