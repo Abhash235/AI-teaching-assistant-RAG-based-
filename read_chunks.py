@@ -2,6 +2,10 @@ import requests
 import os
 import json
 import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
+import joblib 
+
 # create embeddings of the text
 
 def create_embeddings(text_list):
@@ -20,7 +24,7 @@ jsons=os.listdir("jsons") #list all the jsons
 for json_file in jsons:
     with open(f"jsons/{json_file}") as f:
         content=json.load(f)
-        print(f"creating embeddings for {json_file}")
+        # print(f"creating embeddings for {json_file}")
         
     embeddings = create_embeddings([c["text"] for c in content["chunks"]]) # first it give a list of texts of chunk , then call the function for embedding
     for i,chunk in enumerate(content["chunks"]):
@@ -31,9 +35,10 @@ for json_file in jsons:
 
 # print(my_dict)
 
-df = pd.DataFrame.from_records(my_dict)
-print(df)
 
-# a = create_embeddings(["cat sat on the mat","abhash dances on a mat"])
-# print(a)
- 
+df = pd.DataFrame.from_records(my_dict)
+# save this dataframe
+joblib.dump(df,"embeddings.joblib")
+# print(df)
+
+

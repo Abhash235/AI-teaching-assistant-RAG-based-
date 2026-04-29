@@ -1,2 +1,1 @@
-  # tutorial_no= file.split(".")[0].split("Tutorial ")[1]
-    # print(tutorial_no)
+        # print(f"creating embeddings for {json_file}")
