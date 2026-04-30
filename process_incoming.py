@@ -28,17 +28,19 @@ quesiton_embeddings=create_embeddings([incoming_query])[0]
 
 # here the embedding is converted into 2D by np.vstack() , cosine_similarity takes 2D vectors
 similaritis=cosine_similarity(np.vstack(df["embedding"]),[quesiton_embeddings]).flatten()
-print(similaritis)
-print(similaritis.argsort())
+# print(similaritis)
+# print(similaritis.argsort())
 
 
 # used to get top 3 result
 top_result=3
 max_index=similaritis.argsort()[::-1][0:top_result]
-print(max_index)
+# print(max_index)
 
 new_df=df.loc[max_index]
 print(new_df[["number","title","text"]])
+for index,item in new_df.iterrows():
+    print(index,item["number"],item["title"],item["text"])
 
 
 print("complete")
