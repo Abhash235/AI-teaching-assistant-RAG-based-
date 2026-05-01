@@ -1,0 +1,9 @@
+ im teaching web devlopment using sigma web devlopment course. Here are videos chunks subtitles containing video
+title, video number, start time in second , end time in second ,the text at that time:
+
+{"title":{"5":"flexboxVIDEO","2":"bbb","4":"flexboxVIDEO"},"number":{"5":"2","2":"1","4":"2"},"start":{"5":7.0,"2":7.0,"4":2.0},"end":{"5":10.0,"2":10.0,"4":7.0},"text":{"5":" based on which I will be giving you an exercise which you all have to solve","2":" based on which I will be giving you an exercise which you all have to solve","4":" Because in this video, I will be giving you all the concepts that we have learnt in the Sigma Map Development course"}}
+______________________________
+"name of the course"
+user asked this question related to the video chunks , you have to answer whwre and how much contents in taught in which 
+video (in which video and at what time stamp) and guide to the user to go to the perticular video . if user asks unrelated 
+question , tell him that you can only answer questions related to the course

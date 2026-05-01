@@ -39,8 +39,24 @@ max_index=similaritis.argsort()[::-1][0:top_result]
 
 new_df=df.loc[max_index]
 print(new_df[["number","title","text"]])
-for index,item in new_df.iterrows():
-    print(index,item["number"],item["title"],item["text"])
+
+prompt = f''' im teaching web devlopment using sigma web devlopment course. Here are videos chunks subtitles containing video
+title, video number, start time in second , end time in second ,the text at that time:
+
+{new_df[["title","number","start","end","text"]].to_json()}
+______________________________
+"{incoming_query}"
+user asked this question related to the video chunks , you have to answer whwre and how much contents in taught in which 
+video (in which video and at what time stamp) and guide to the user to go to the perticular video . if user asks unrelated 
+question , tell him that you can only answer questions related to the course
+'''
+
+with open("prompt.txt", "w") as f:
+    f.write(prompt)
+
+# for index,item in new_df.iterrows():
+#     print(index,item["number"],item["title"],item["text"])
+
 
 
 print("complete")
